@@ -23,6 +23,9 @@ Please install the required packages before running the scripts.<br>
     ```python
     python hybrid_run.py
     ```
+    #### Test example
+    ![hybrid_example](https://github.com/yenna0o/Images-in-readme/assets/98952623/f71e66bb-b84d-48c5-a882-6f42e5af9041)
+
 * ### item_based_run.py
     - Algorithm 2.
     - This script outputs a list of 5 product titles based on an input product ID.
@@ -33,6 +36,8 @@ Please install the required packages before running the scripts.<br>
     ```python
     python item_based_run.py
     ```
+    #### Test example
+    ![item_based_example](https://github.com/yenna0o/Images-in-readme/assets/98952623/e9703e45-f5a6-42b1-9982-d69b7e9a5e37)
 ## Algo Explanation:
 * ### Algorithm 1 (hybrid): "Users who liked this item also liked…"<br>
 Flowchart:<br>
