@@ -4,7 +4,7 @@ This project uses 2 differnt algorithms to recommend a list of 5 products based 
 Make sure you've already git installed. Then you can run the following commands to get the scripts on your computer:
 OS X, Linux and Windows:
 ```bash
-git clone https://github.com/yenna)o/Razer_assignment.git
+git clone https://github.com/yenna0o/Razer_assignment.git
 cd Razer_assignment
 ```
 ## Scripts
@@ -17,8 +17,8 @@ Please install the required packages before running the scripts.<br>
     - Algorithm 1.
     - This script outputs a list of 5 product IDs based on an input product ID.
     - The recommendation algorithm is a combine of both user-based and popularity-based.
-    - It will be reading data from "reviews.json" file, hence you need to have the data file downloaded to the same path as this python script.
-    - Fetch "reviews.json" from https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
+    - It will be reading data from "Appliances.json" file, hence you need to have the data file downloaded to the same path as this python script.
+    - Fetch "reviews" file under Appliances from https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
     #### Usage Instructions
     ```python
     python hybrid_run.py
@@ -27,8 +27,8 @@ Please install the required packages before running the scripts.<br>
     - Algorithm 2.
     - This script outputs a list of 5 product titles based on an input product ID.
     - The recommendation algorithm is item-based.
-    - It will be reading data from "metadata.json" file, hence you need to have the data file downloaded to the same path as this python script.
-    - Fetch "metadata.json" from https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
+    - It will be reading data from "meta_Appliances.json" file, hence you need to have the data file downloaded to the same path as this python script.
+    - Fetch "metadata" file under Appliances from https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
     #### Usage Instructions
     ```python
     python item_based_run.py
@@ -37,7 +37,7 @@ Please install the required packages before running the scripts.<br>
 * ### Algorithm 1 (hybrid): "Users who liked this item also liked…"<br>
 Flowchart:<br>
 ![Screenshot 2023-12-07 021627](https://github.com/yenna0o/Images-in-readme/assets/98952623/9052fc00-6474-4bc1-a420-1a71cf86bc57)<br>
-Data file used: reviews.json<br>
+Data file used: Appliances.json<br>
 * Algo steps:
     - 1. User input a product id.<br>
     - 2. Based on the product id, find a group of users who liked this product. (An overall of 5 given is deemed as “liked” by the user)<br>
@@ -55,7 +55,7 @@ Rationale: selecting one product each from different users increases the variety
     - 10. Stop the process.<br>
 
 * ### Algorithm 2 (item-based): "Similar products you might like..."<br>
-Data file used: metadata.json<br>
+Data file used: meta_Appliances.json<br>
 * Algo steps:<br>
     - 1. Based on the 'title' of each product, use TF-IDF technique to vectorize them and save as a matrix.<br>
     - 2. Compute consine similarity on the matrix, products are on both row and columns. The resultant consine similarity matrix is stored.<br>
