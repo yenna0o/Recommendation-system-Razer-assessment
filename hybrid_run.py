@@ -1,35 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Algo flow:
-# - Given a product
-# - find a group of users who gave the product the an overall of 5
-# - Loop the following process to product until 5 items or user list exhausted:
-# 1. Randomly select 1 user from the gorup of users
-# 2. Find a group of products that are given a 5 by the user. If len(group)==0: go back to step 1.
-# 3. Randomly output 1 product from the group of products.
-# - If len(recommendation)<5, loop the following process until len(recommendation)==5:
-# - Randomly
-
-# ## Codes
-
-# In[6]:
-
-
 #import packages
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-import os
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all"
 import json
 import gzip
 from datetime import datetime
 import warnings; warnings.simplefilter('ignore')
-
-
-# In[3]:
-
 
 #read in datasets
 #reading in data as pd dataframe
@@ -46,11 +24,6 @@ def getDF(path):
   return pd.DataFrame.from_dict(df, orient='index')
 
 df = getDF('Appliances.json.gz')
-# df_meta = getDF('meta_Appliances.json.gz')
-
-
-# In[4]:
-
 
 #extract relevant col from df
 def simplify_df(df):
@@ -119,20 +92,14 @@ def product_recommend(df, product_id):
 
     return recommendation
 
-
-# ## demo input & output
-
-# In[7]:
-
-
-# Read product_id from command line
-product_id = input("Enter product ID: ")
-# Call the product_recommend function
-result = product_recommend(df, product_id)
-print("Recommendations: ", result)
-
-
-# In[ ]:
+def main():
+    # Read product_id from command line
+    product_id = input("Enter product ID: ")
+    # Call the product_recommend function
+    result = product_recommend(df, product_id)
+    print("Recommendations: ", result)
+if __name__ == '__main__':
+    main()
 
 
 

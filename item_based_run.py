@@ -4,9 +4,6 @@
 #import packages
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-import os
-from IPython.core.interactiveshell import InteractiveShell
-InteractiveShell.ast_node_interactivity = "all"
 import json
 import gzip
 from datetime import datetime
@@ -14,6 +11,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+import argparse
 import string
 # Download necessary resources
 nltk.download('omw-1.4')
@@ -131,16 +129,8 @@ def item_based_recommendation(preprocessed_meta, product_id):
     titles=give_title(preprocessed_meta, similar_product_ids)
     return titles
 
-
-
-import argparse
-# Add command-line argument parsing
-parser = argparse.ArgumentParser(description='Product Recommendation System')
-parser.add_argument('product_id', type=str, help='Product ID to get recommendations for')
 def main():
-    # Read the command-line arguments
-    args = parser.parse_args()
-    product_id = args.product_id
+    product_id = input("Enter product ID: ")
     # Call the item_based_recommendation function
     result = item_based_recommendation(preprocessed_meta, product_id)
     print("Recommendations: ", result)
